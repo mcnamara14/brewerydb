@@ -12,32 +12,32 @@
       "Friday": "12pm - 12am",
       "Satruday": "12pm - 12am",
       "Sunday": "12pm - 10pm"
-      
     },
     "beers": [
       {
-        "name": "deftones phantom bride release",
+        "name": "Deftones Phantom Bride Release",
         "style": "IPA",
         "abv": "7.1%",
         "ibu": "60"
       },
       {
-        "name": "peanut butter milk stout",
+        "name": "Peanut Butter Milk Stout",
         "style": "milk stout",
         "abv": "5.3%",
         "ibu": "30"
       },
 
       {
-        "name": "me so honey blonde",
+        "name": "Me So Honey Blonde",
         "style": "honey wheat ale",
         "abv": "5.5%",
         "ibu": "25"
       }
     ]
   },
+
   "modern times": {
-     "address": "3000 Upas Street",
+    "address": "3000 Upas Street",
     "city": "San Diego",
     "state": "CA",
     "zip code": "92104",
@@ -49,6 +49,26 @@
       "Friday": "12pm - 12am",
       "Satruday": "11am - 12am",
       "Sunday": "11am - 10pm"
-    }
+    },
+    "beers": [
+      {
+        "name": "Fortunate Islands",
+        "style": "Pale Ale",
+        "abv": "5.0%",
+        "ibu": "46"
+      },
+      {
+        "name": "Blazing World",
+        "style": "Hoppy Amber",
+        "abv": "6.8%",
+        "ibu": "85"
+      },
+      {
+        "name": "Fruitlands",
+        "style": "Gose",
+        "abv": "4.8%",
+        "ibu": "17"
+      }
+    ]
   }
 }
