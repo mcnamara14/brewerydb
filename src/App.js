@@ -5,11 +5,13 @@ import { Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
 import withStyles from '@material-ui/core/styles/withStyles'
+import breweriesdb from './breweries.json'
 
 
 const styles = {
   container: {
-    background: "#eee",
+    marginTop: 100,
+    background: "",
   },
   input: {
     width: "100%",
@@ -22,14 +24,49 @@ const styles = {
 }
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      inputVal: ""
+    };
+  }
+
+  handleChange(e) {
+    this.setState({
+      inputVal: e.target.value
+    });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.findBrewery(this.state.inputVal);
+  };
+
+  findBreweries(brewery){
+    
+  }
+
   render() {
-    const {classes} = this.props
-    return <Grid container justify="center">
+    console.log(breweriesdb)
+    const { classes } = this.props;
+    return (
+      <Grid container justify="center">
         <Grid item className={classes.container} xs={6}>
-          <Input className={classes.input} />
-          <Button color="secondary" variant="contained" className={classes.button}>Find Breweries</Button>
+          <Input
+            placeholder="Search by Location or Brewery"
+            className={classes.input}
+            onChange={e => this.handleChange(e)}
+          />
+          <Button
+            color="secondary"
+            variant="contained"
+            className={classes.button}
+          >
+            Find Breweries
+          </Button>
         </Grid>
-      </Grid>;
+      </Grid>
+    );
   }
 }
 
