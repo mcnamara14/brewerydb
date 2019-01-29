@@ -39,15 +39,22 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.findBrewery(this.state.inputVal);
+    this.findBreweries(this.state.inputVal);
   };
 
-  findBreweries(brewery){
+  findBreweries = brewery => {
+    breweriesdb[brewery] ? this.displayBreweryInfo(): this.missingBreweryError();
+  }
+
+  missingBreweryError(){
+    
+  }
+
+  displayBreweryInfo(){
     
   }
 
   render() {
-    console.log(breweriesdb)
     const { classes } = this.props;
     return (
       <Grid container justify="center">
@@ -58,6 +65,8 @@ class App extends Component {
             onChange={e => this.handleChange(e)}
           />
           <Button
+            onClick={e => this.handleSubmit(e)}
+            type="submit"
             color="secondary"
             variant="contained"
             className={classes.button}
