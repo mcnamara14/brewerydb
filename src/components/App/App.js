@@ -4,7 +4,9 @@ import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
 import withStyles from '@material-ui/core/styles/withStyles'
 import breweriesdb from '../../breweries.json'
-
+import compose from 'recompose/compose';
+import { connect } from 'react-redux';
+import { selectBrewery } from '../../actions/selectBrewery'
 
 const styles = {
   container: {
@@ -20,6 +22,7 @@ const styles = {
     marginTop: 20
   }
 }
+
 
 class App extends Component {
   constructor() {
@@ -41,14 +44,15 @@ class App extends Component {
   };
 
   findBreweries = brewery => {
-    breweriesdb[brewery] ? this.displayBreweryInfo(): this.missingBreweryError();
+    breweriesdb[brewery] ? this.displayBreweryInfo(breweriesdb[brewery]): this.missingBreweryError();
   }
 
   missingBreweryError(){
     
   }
 
-  displayBreweryInfo(){
+  displayBreweryInfo(brewery){
+    this.props.selectBrewery(brewery.id)
     this.props.history.push('/brewery')
   }
 
@@ -77,4 +81,13 @@ class App extends Component {
   }
 }
 
-export default withStyles(styles)(App);
+export const mapDispatchToProps = (dispatch) => ({
+  selectBrewery: id => {
+    return dispatch(selectBrewery(id))
+  }
+})
+
+export default compose(
+  withStyles(styles),
+  connect(null, mapDispatchToProps)
+)(App)
