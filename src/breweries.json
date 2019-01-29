@@ -1,0 +1,40 @@
+{
+  "belching beaver": {
+    "address": "4223 30th Street",
+    "city": "San Diego",
+    "state": "CA",
+    "zip code": "92104",
+    "hours": {
+      "Monday": "3pm - 10pm",
+      "Tuesday": "3pm - 10pm",
+      "Wednesday": "3pm - 10pm",
+      "Thursday": "3pm - 10pm",
+      "Friday": "12pm - 12am",
+      "Satruday": "12pm - 12am",
+      "Sunday": "12pm - 10pm"
+      
+    },
+    "beers": [
+      {
+        "name": "deftones phantom bride release",
+        "style": "IPA",
+        "abv": "7.1%",
+        "ibu": "60"
+      },
+      {
+        "name": "peanut butter milk stout",
+        "style": "milk stout",
+        "abv": "5.3%",
+        "ibu": "30"
+      },
+
+      {
+        "name": "me so honey blonde",
+        "style": "honey wheat ale",
+        "abv": "5.5%",
+        "ibu": "25"
+      }
+
+    ]
+  }
+}
