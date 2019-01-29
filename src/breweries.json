@@ -34,7 +34,21 @@
         "abv": "5.5%",
         "ibu": "25"
       }
-
     ]
+  },
+  "modern times": {
+     "address": "3000 Upas Street",
+    "city": "San Diego",
+    "state": "CA",
+    "zip code": "92104",
+    "hours": {
+      "Monday": "12pm - 10pm",
+      "Tuesday": "12pm - 10pm",
+      "Wednesday": "12pm - 10pm",
+      "Thursday": "12:30pm - 10pm",
+      "Friday": "12pm - 12am",
+      "Satruday": "11am - 12am",
+      "Sunday": "11am - 10pm"
+    }
   }
 }
