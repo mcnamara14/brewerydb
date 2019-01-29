@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Grid from '@material-ui/core/Grid'
+import { Button } from '@material-ui/core';
 
 class App extends Component {
   render() {
@@ -16,6 +17,8 @@ class App extends Component {
           >
             Learn React
           </a>
+
+        <Button variant="outlined" color="secondary">This is a button</Button>
         </header>
       </div>
     );
