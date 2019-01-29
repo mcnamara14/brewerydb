@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
 import withStyles from '@material-ui/core/styles/withStyles'
-import breweriesdb from './breweries.json'
+import breweriesdb from '../../breweries.json'
 
 
 const styles = {
@@ -51,7 +49,7 @@ class App extends Component {
   }
 
   displayBreweryInfo(){
-    
+    this.props.history.push('/brewery')
   }
 
   render() {
