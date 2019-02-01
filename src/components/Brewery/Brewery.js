@@ -27,8 +27,8 @@ const styles = {
 class Brewery extends Component {
   
   componentDidMount() {
-    const selectedBrewery = this.props.selectedBrewery
-    console.log(selectedBrewery)
+    // const selectedBreweryId = this.props.selectedBrewery
+    // selectedBreweryId
   }
 
   render() {

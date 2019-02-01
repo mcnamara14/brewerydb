@@ -40,19 +40,24 @@ class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.findBreweries(this.state.inputVal);
+    this.findBrewery(this.state.inputVal);
   };
 
-  findBreweries = brewery => {
-    breweriesdb[brewery] ? this.displayBreweryInfo(breweriesdb[brewery]): this.missingBreweryError();
+  findBrewery = breweryName => {
+    const brewery = breweriesdb.find((brewery) => {
+      return brewery.name === breweryName && brewery.id
+    }) 
+
+    const id = brewery.id
+    id ? this.displayBreweryInfo(id) : this.missingBreweryError();
   }
 
   missingBreweryError(){
     
   }
 
-  displayBreweryInfo(brewery){
-    this.props.dispatch(brewery.id)
+  displayBreweryInfo(id){
+    this.props.selectedBrewery(id)
     
     this.props.history.push('/brewery')
   }
@@ -83,7 +88,7 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  dispatch: id => {
+  selectedBrewery: id => {
     return dispatch(selectBrewery(id))
   }
 })

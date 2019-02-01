@@ -1,6 +1,6 @@
-{
-  "belching beaver": {
-    "name": "Belching Beaver",
+[
+  {
+    "name": "belching beaver",
     "id": "1",
     "address": "4223 30th Street",
     "city": "San Diego",
@@ -36,7 +36,7 @@
       }
     ]
   },
-  "modern times": {
+   {
     "id": "2",
     "address": "3000 Upas Street",
     "city": "San Diego",
@@ -72,4 +72,4 @@
       }
     ]
   }
-}
+]
