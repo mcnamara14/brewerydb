@@ -1,5 +1,7 @@
-{
-  "belching beaver": {
+[
+  {
+    "name": "belching beaver",
+    "id": "1",
     "address": "4223 30th Street",
     "city": "San Diego",
     "state": "CA",
@@ -26,7 +28,6 @@
         "abv": "5.3%",
         "ibu": "30"
       },
-
       {
         "name": "Me So Honey Blonde",
         "style": "honey wheat ale",
@@ -35,8 +36,8 @@
       }
     ]
   },
-
-  "modern times": {
+   {
+    "id": "2",
     "address": "3000 Upas Street",
     "city": "San Diego",
     "state": "CA",
@@ -71,4 +72,4 @@
       }
     ]
   }
-}
+]
