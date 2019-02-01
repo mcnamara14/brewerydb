@@ -8,7 +8,6 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import storeBrewery from '../../actions/storeBrewery';
 
-
 const styles = {
   container: {
     marginTop: 100,
