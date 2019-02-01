@@ -1,6 +1,6 @@
 [
   {
-    "name": "belching beaver",
+    "name": "Belching Beaver",
     "id": "1",
     "address": "4223 30th Street",
     "city": "San Diego",
@@ -36,7 +36,8 @@
       }
     ]
   },
-   {
+  {
+    "name": "Modern Times Flavordome",
     "id": "2",
     "address": "3000 Upas Street",
     "city": "San Diego",
@@ -59,16 +60,83 @@
         "ibu": "46"
       },
       {
+        "name": "Black House",
+        "style": "Coffee Stout",
+        "abv": "5.8%",
+        "ibu": "40"
+      },
+      {
         "name": "Blazing World",
         "style": "Hoppy Amber",
         "abv": "6.8%",
         "ibu": "85"
       },
       {
+        "name": "Orderville",
+        "style": "Hazy IPA",
+        "abv": "7.2%",
+        "ibu": "75"
+      },
+      {
         "name": "Fruitlands",
         "style": "Gose",
         "abv": "4.8%",
         "ibu": "17"
+      }
+    ]
+  },
+  {
+    "name": "Hillcrest Brewing",
+    "id": "3",
+    "address": "1458 University Avenue",
+    "city": "San Diego",
+    "state": "CA",
+    "zip code": "92103",
+    "hours": {
+      "Monday": "3pm - 11pm",
+      "Tuesday": "3pm - 11pm",
+      "Wednesday": "3pm - 11pm",
+      "Thursday": "3pm - 11pm",
+      "Friday": "3pm - 11pm",
+      "Satruday": "11am - 11pm",
+      "Sunday": "9am - 11pm"
+    },
+    "beers": [
+      {
+        "name": "Bannana Hammock",
+        "style": "Scotch Ale",
+        "abv": "9.0%",
+        "ibu": "27"
+      },
+      {
+        "name": "U-Haule Hefe",
+        "style": "Hefeweizen",
+        "abv": "5.0%",
+        "ibu": "24"
+      },
+      {
+        "name": "Just the Hop",
+        "style": "IPA",
+        "abv": "7.2%",
+        "ibu": "60"
+      },
+      {
+        "name": "Perle Necklance",
+        "style": "Pale Ale",
+        "abv": "6.0%",
+        "ibu": "37"
+      },
+      {
+        "name": "Crotch Rocket",
+        "style": "Irish Red",
+        "abv": "5.5%",
+        "ibu": "23"
+      },
+      {
+        "name": "Hop Sucker",
+        "style": "Double IPA",
+        "abv": "8.5%",
+        "ibu": "83"
       }
     ]
   }
