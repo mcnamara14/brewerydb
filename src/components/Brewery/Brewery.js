@@ -27,8 +27,12 @@ const styles = {
 class Brewery extends Component {
   
   componentDidMount() {
-    // const selectedBreweryId = this.props.selectedBrewery
-    // selectedBreweryId
+    const selectedBreweryId = this.props.selectedBrewery
+    const brewery = breweriesdb.find((brewery) => {
+      if(selectedBreweryId === brewery.id) return brewery
+    })
+  
+    this.props.storeBrewery(brewery)
   }
 
   render() {
