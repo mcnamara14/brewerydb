@@ -52,7 +52,8 @@ class App extends Component {
   }
 
   displayBreweryInfo(brewery){
-    this.props.selectBrewery(brewery.id)
+    this.props.dispatch(brewery.id)
+    
     this.props.history.push('/brewery')
   }
 
@@ -82,12 +83,16 @@ class App extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  selectBrewery: id => {
+  dispatch: id => {
     return dispatch(selectBrewery(id))
   }
 })
 
+export const mapStateToProps = (state) => ({
+  selectedBrewery: state.selectedBrewery
+})
+
 export default compose(
   withStyles(styles),
-  connect(null, mapDispatchToProps)
+  connect(mapStateToProps, mapDispatchToProps)
 )(App)

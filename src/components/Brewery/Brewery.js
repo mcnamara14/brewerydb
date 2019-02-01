@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid'
-import Input from '@material-ui/core/Input'
-import withStyles from '@material-ui/core/styles/withStyles'
-import breweriesdb from '../../breweries.json'
+import Grid from '@material-ui/core/Grid';
+import Input from '@material-ui/core/Input';
+import withStyles from '@material-ui/core/styles/withStyles';
+import breweriesdb from '../../breweries.json';
+import compose from 'recompose/compose';
+import { connect } from 'react-redux';
+import storeBrewery from '../../actions/storeBrewery';
 
 
 const styles = {
@@ -22,7 +25,11 @@ const styles = {
 }
 
 class Brewery extends Component {
-
+  
+  componentDidMount() {
+    const selectedBrewery = this.props.selectedBrewery
+    console.log(selectedBrewery)
+  }
 
   render() {
     const { classes } = this.props;
@@ -35,4 +42,22 @@ class Brewery extends Component {
   }
 }
 
-export default withStyles(styles)(Brewery);
+export const mapDispatchToProps = dispatch => ({
+  storeBrewery: brewery => {
+    return dispatch(storeBrewery(brewery));
+  }
+});
+
+export const mapStateToProps = (state) => ({
+  selectedBrewery: state.selectedBrewery
+});
+
+export default compose(
+  withStyles(styles),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
+)(Brewery);
+
+
