@@ -1,12 +1,23 @@
-import React, { Component } from 'react';
-import { Button } from '@material-ui/core';
+import React, {
+  Component
+} from 'react';
+import {
+  Button
+} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
 import withStyles from '@material-ui/core/styles/withStyles'
 import breweriesdb from '../../breweries.json'
 import compose from 'recompose/compose';
-import { connect } from 'react-redux';
-import { selectBrewery } from '../../actions/selectBrewery'
+import {
+  connect
+} from 'react-redux';
+import {
+  selectBrewery
+} from '../../actions/selectBrewery'
+import * as authorization from '../../firebase/auth'
+import * as firebase from 'firebase'
+import 'firebase/database'
 
 const styles = {
   container: {
@@ -32,6 +43,27 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const firebaseRef = firebase.database().ref()
+    
+    breweriesdb.map((brewery) => {
+      let firebaseLocation
+      firebaseLocation = firebaseRef.child('breweries').child(brewery.name)
+
+      firebaseLocation.update({
+        name: brewery.name,
+        id: brewery.id,
+        address: brewery.address,
+        city: brewery.city,
+        state: brewery.state,
+        zip: brewery.zip,
+        hours: brewery.hours,
+        beers: brewery.beers
+      })
+    })
+  }
+
+
   handleChange(e) {
     this.setState({
       inputVal: e.target.value
@@ -46,43 +78,57 @@ class App extends Component {
   findBrewery = breweryName => {
     const brewery = breweriesdb.find((brewery) => {
       return brewery.name === breweryName && brewery.id
-    }) 
+    })
 
-    const id = brewery.id
+    const id = brewery ? brewery.id : null
     id ? this.displayBreweryInfo(id) : this.missingBreweryError();
   }
 
-  missingBreweryError(){
-    
+  missingBreweryError() {
+    console.log('brewery isnt in the database')
   }
 
-  displayBreweryInfo(id){
+  displayBreweryInfo(id) {
     this.props.selectedBrewery(id)
-    
+
     this.props.history.push('/brewery')
   }
 
   render() {
-    const { classes } = this.props;
-    return (
-      <Grid container justify="center">
-        <Grid item className={classes.container} xs={6}>
-          <Input
-            placeholder="Search by Location or Brewery"
-            className={classes.input}
-            onChange={e => this.handleChange(e)}
-          />
-          <Button
-            onClick={e => this.handleSubmit(e)}
-            type="submit"
-            color="secondary"
-            variant="contained"
-            className={classes.button}
-          >
-            Find Breweries
-          </Button>
-        </Grid>
-      </Grid>
+    const {
+      classes
+    } = this.props;
+    return ( <
+      Grid container justify = "center" >
+      <
+      Grid item className = {
+        classes.container
+      }
+      xs = {
+        6
+      } >
+      <
+      Input placeholder = "Search by Location or Brewery"
+      className = {
+        classes.input
+      }
+      onChange = {
+        e => this.handleChange(e)
+      }
+      /> <
+      Button onClick = {
+        e => this.handleSubmit(e)
+      }
+      type = "submit"
+      color = "secondary"
+      variant = "contained"
+      className = {
+        classes.button
+      } >
+      Find Breweries <
+      /Button> <
+      /Grid> <
+      /Grid>
     );
   }
 }
