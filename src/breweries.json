@@ -5,7 +5,7 @@
     "address": "4223 30th Street",
     "city": "San Diego",
     "state": "CA",
-    "zip code": "92104",
+    "zip": "92104",
     "hours": {
       "Monday": "3pm - 10pm",
       "Tuesday": "3pm - 10pm",
@@ -42,7 +42,7 @@
     "address": "3000 Upas Street",
     "city": "San Diego",
     "state": "CA",
-    "zip code": "92104",
+    "zip": "92104",
     "hours": {
       "Monday": "12pm - 10pm",
       "Tuesday": "12pm - 10pm",
@@ -91,7 +91,7 @@
     "address": "1458 University Avenue",
     "city": "San Diego",
     "state": "CA",
-    "zip code": "92103",
+    "zip": "92103",
     "hours": {
       "Monday": "3pm - 11pm",
       "Tuesday": "3pm - 11pm",
@@ -146,7 +146,7 @@
     "address": "1501 E Street",
     "city": "San Diego",
     "state": "CA",
-    "zip code": "92101",
+    "zip": "92101",
     "hours": {
       "Monday": "11am - 11pm",
       "Tuesday": "11am - 11pm",
