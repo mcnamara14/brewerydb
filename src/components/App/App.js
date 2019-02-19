@@ -95,40 +95,14 @@ class App extends Component {
   }
 
   render() {
-    const {
-      classes
-    } = this.props;
-    return ( <
-      Grid container justify = "center" >
-      <
-      Grid item className = {
-        classes.container
-      }
-      xs = {
-        6
-      } >
-      <
-      Input placeholder = "Search by Location or Brewery"
-      className = {
-        classes.input
-      }
-      onChange = {
-        e => this.handleChange(e)
-      }
-      /> <
-      Button onClick = {
-        e => this.handleSubmit(e)
-      }
-      type = "submit"
-      color = "secondary"
-      variant = "contained"
-      className = {
-        classes.button
-      } >
-      Find Breweries <
-      /Button> <
-      /Grid> <
-      /Grid>
+    const {classes} = this.props;
+    
+    return ( 
+      <Grid container justify = "center" >
+        <Grid item className={classes.container} xs={6} >
+          <Input placeholder = "Search by Location or Brewery"className = {classes.input} onChange = {e => this.handleChange(e)}/> <Button onClick = {e => this.handleSubmit(e)} type = "submit" color = "secondary" variant = "contained" className = {classes.button} >Find Breweries </Button>
+        </Grid>
+      </Grid>
     );
   }
 }
